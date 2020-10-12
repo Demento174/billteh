@@ -1,0 +1,26 @@
+<div class="row_phone {{ class }}">
+    <form action="/" class="_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-lg-4">
+                    {% include './blocks/title/h3.twig' with {title:title} %}
+
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-lg-4">
+                    <div class="flex_column align_start">
+                        <input type="tel" class="input" placeholder="Контактный телефон">
+                        {% include './blocks/form/personal.twig' %}
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-lg-4">
+                    <button class="btn btn--brown send">
+                        {{ btnContent }}
+                    </button>
+                    <div class="response">
+                        {{ response }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

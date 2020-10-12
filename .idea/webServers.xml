@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="af36a280-49f4-44c2-bbc3-8a92316a93a8" name="billteh">
+        <fileTransfer rootFolder="/home/d/demento/billteh.demento.beget.tech/public_html" accessType="SFTP" host="demento.beget.tech" port="22" sshConfigId="0f088b07-cc87-464e-be76-b7a65a090249" sshConfig="demento">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

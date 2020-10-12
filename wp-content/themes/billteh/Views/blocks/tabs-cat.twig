@@ -1,0 +1,73 @@
+<section class="tabs-cat">
+    <div class="links">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-lg-12">
+                    <div class="flex_row links_wrapper">
+                        {% for cat in cats %}
+                            <a href="#{{ cat.term.slug }}" class="link flex_row justify_around align_center {% if loop.index0 == 0 %} active {% endif %}">
+                                <span>{{ cat.term.title }}</span>
+                                <img src="{{ cat.term.acf.img.url }}" alt="{{ cat.term.acf.img.alt }}">
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-lg-12">
+
+                    {% for cat in cats %}
+                        <div class="content {% if loop.index0 == 0 %} active {% endif %}" id="{{ cat.term.slug }}">
+                            <div class="description flex_row justify_between">
+                                {% set title = { 'title' : cat.term.description } %}
+                                {% include './blocks/title/h3.twig' with { title : title } %}
+
+                                <div class="flex_row justify_end align_center">
+                                    <span>{{ cat.term.title }}</span>
+                                    <img src="{{ cat.term.acf.img.url }}" alt="{{ cat.term.acf.img.alt }}">
+                                </div>
+                            </div>
+                            <div class="items">
+
+                                {% for item in cat.children %}
+
+                                {% if loop.index % 2 != 0  %}
+                                        <div class="_row flex_row justify_center">
+                                {% endif %}
+
+                                    <a href="{{ item.link }}" class="item ">
+                                            <div class="img">
+                                                <img src="{{ item.acf.img.url }}" alt="{{ item.acf.img.alt }}">
+                                            </div>
+                                            <div class="titles flex_column">
+                                                <span class="title">
+                                                    {{ item.title }}
+                                                </span>
+                                                <div class="subtitle">
+                                                    {{ item.description }}
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                {% if loop.index % 2 == 0 %}
+                                    </div>
+                                {% endif %}
+
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>

@@ -1,0 +1,48 @@
+<section class="title-carousel {{ class }}">
+    <div class="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-lg-8">
+                    {% include './blocks/title/h1.twig' with { title:title } %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="imgs">
+        {% if imgs %}
+            {% include './blocks/carousels/carousel-img.twig' with { items:imgs } %}
+        {% else %}
+            <img src="{{ img }}" alt="{{ item.img }}">
+        {% endif %}
+    </div>
+    <div class="bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-lg-12">
+                    <div class="flex_row justify_start wrapper">
+
+                        <div class="block flex_column align_start">
+                            <span>Стоимость</span>
+                            <span><span class="number-division">{{ price }}</span> рублей</span>
+                        </div>
+                        <div class="block flex_column align_start">
+                            <span>Срок</span>
+                            <span>{{ deadline }}</span>
+                        </div>
+                        <div class="block flex_column align_start characters carousel_characters owl-theme owl-carousel">
+                            {% for item in characters %}
+                                <div class="carousel_characters_item flex_column">
+                                    <span class="title">{{ item.title }}</span>
+                                    <span class="value">{{ item.value }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

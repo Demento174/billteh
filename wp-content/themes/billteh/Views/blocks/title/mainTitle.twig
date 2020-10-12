@@ -1,0 +1,17 @@
+<section class="mainTitle {{ class }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-lg-4">
+                <div class="left">
+                    {% include './blocks/title/h1.twig' with { title:title} %}
+                    {% include './blocks/details/social.twig' %}
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-lg-8">
+                <div class="right">
+                    <img src="{{ img.url }}" alt="{{ img.url }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

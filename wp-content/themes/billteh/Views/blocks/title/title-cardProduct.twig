@@ -1,0 +1,54 @@
+<div class="wrapper-carousel-cardProduct">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-lg-12">
+                <div class="carousel-cardProduct">
+                    <div class="item">
+                        <div class="cardProduct flex_column">
+                            <div class="top flex_row">
+                                <div class="left">
+                                    <div class="img center">
+                                        <img src="{{ img }}" alt="{{ img.alt }}">
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <h4 class="h4">
+                                        {{ title }}
+                                    </h4>
+                                    <h4 class="h4">
+                                        арт. {{ lot }}
+                                    </h4>
+                                    <div class="content">
+                                        {{ content | raw }}
+                                    </div>
+                                    <div class="footer flex_row justify_between">
+                                        <button class="btn btn--brown btn--callback" data-toggle="modal" data-title="Оставить заявку на {{ title }}" data-target="#callback">
+                                            Заказать
+                                        </button>
+                                        <div class="old_price">
+                                            <span class="number-division">{{ price.old_price }}</span> ₽
+                                        </div>
+                                        <div class="price flex_column">
+                                            <span><span class="number-division">{{ price.new_price }}</span> ₽</span>
+                                            <span>Экономия <span class="number-division">{{ price.difference }}</span> ₽</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom flex_row justify_center">
+                                {% for character in characters %}
+                                    <div class="flex_column justify_start">
+                                        <span>{{ character.title }}</span>
+                                        <span>{{ character.value }}</span>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

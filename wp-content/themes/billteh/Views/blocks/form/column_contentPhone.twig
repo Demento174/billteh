@@ -1,0 +1,26 @@
+<section class="column_contentPhone {{ class }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-lg-6">
+                <div class="content">
+                    <ul>
+                        <li><h3>{{ title }}</h3></li>
+                        <li><p>{{ content }}</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-lg-6">
+                <form action="/" class="flex_column align_start">
+                    <input type="tel" class="input" placeholder="Контактный телефон">
+                    <div class="input-description">
+                        На этот телефон мы позвоним, чтобы договориться о встрече
+                    </div>
+                    <button class="btn btn--brown">
+                        обсудить проект
+                    </button>
+                    {% include './blocks/form/personal.twig' %}
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
